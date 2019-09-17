@@ -1,4 +1,4 @@
-
+### How to Configure Monit to Send Email Alerts 
 ```sudo apt-get install monit```
 
 
@@ -54,47 +54,15 @@ sudo monit -t
 sudo service monit restart
 ```
 
-###If you have problems consider using a Mailgun SMTP relay, the monit configuration for mail then looks like this
+# If you have problems consider using a Mailgun SMTP relay, the monit configuration for mail then looks like this
 ```
 set mailserver 127.0.0.1 port 25
 set alert admin@wp-bullet.com #email address which will receive monit alerts
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 sudo vim /etc/init.d/tomcat
 ```
-
 
 ```
 #!/bin/sh
@@ -141,12 +109,7 @@ exit 0
 sudo ln -s /etc/init.d/tomcat /etc/rc2.d/S99tomcat
 ```
 
-
-
-
-
-
-##tomcat
+# tomcat
 
 ```
 check process tomcat with pidfile /opt/mount_point/application/tomcat8/tomcat.pid
@@ -157,7 +120,7 @@ check process tomcat with pidfile /opt/mount_point/application/tomcat8/tomcat.pi
   if failed port 8080 then alert
   if failed port 8080 for 5 cycles then restart
 ```
-##ssh
+# ssh
 ```
 check process sshd with pidfile /var/run/sshd.pid
     start program  "/etc/init.d/ssh start"
@@ -166,22 +129,21 @@ check process sshd with pidfile /var/run/sshd.pid
     if 3 restarts within 5 cycles then alert
 ```
 
-##php-7.0fpm
+# php-7.0fpm
  ```
  check process php7-fpm with pidfile /run/php/php7.0-fpm.pid
     start program = "/usr/sbin/service php7.0-fpm start" with timeout 60 seconds
     stop program  = "/usr/sbin/service php7.0-fpm stop"
     if failed host 127.0.0.1 port 9000 type tcp for 3 cycles then restart
 ```
-##nginx
+# nginx
 ```
 check process nginx with pidfile /var/run/nginx.pid
     start program = "/etc/init.d/nginx start"
     stop program = "/etc/init.d/nginx stop"
 You have new mail in /var/mail/witfin
 ```
-
-##mysql
+# mysql
 ```check process mysql with pidfile /run/mysqld/mysqld.pid
     group mysql
     start program = "/etc/init.d/mysql start"
