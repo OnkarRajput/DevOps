@@ -54,7 +54,7 @@ sudo monit -t
 sudo service monit restart
 ```
 
-##If you have problems consider using a Mailgun SMTP relay, the monit configuration for mail then looks like this
+###If you have problems consider using a Mailgun SMTP relay, the monit configuration for mail then looks like this
 ```
 set mailserver 127.0.0.1 port 25
 set alert admin@wp-bullet.com #email address which will receive monit alerts
@@ -182,13 +182,10 @@ You have new mail in /var/mail/witfin
 ```
 
 ##mysql
-```
-check process mysql with pidfile /run/mysqld/mysqld.pid
+```check process mysql with pidfile /run/mysqld/mysqld.pid
     group mysql
     start program = "/etc/init.d/mysql start"
     stop program = "/etc/init.d/mysql stop"
     if failed unixsocket /var/run/mysqld/mysqld.sock then restart
     if failed port 3306 protocol mysql then restart
-    if 3 restarts within 5 cycles then alert
-    
-    ```
+    if 3 restarts within 5 cycles then alert```
