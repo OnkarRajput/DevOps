@@ -188,4 +188,4 @@ You have new mail in /var/mail/witfin
     stop program = "/etc/init.d/mysql stop"
     if failed unixsocket /var/run/mysqld/mysqld.sock then restart
     if failed port 3306 protocol mysql then restart
-    if 3 restarts within 5 cycles then alert```
+    if 3 restarts within 5 cycles then alert
