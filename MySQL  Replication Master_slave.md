@@ -1,12 +1,12 @@
 ## HOW TO SETUP MYSQL MASTER/SLAVE REPLICATION ?
 
 
-## Mysql Master side Configuration
+# Mysql Master side Configuration
 
-sudo vim /etc/my.cnf
+`sudo vim /etc/my.cnf`
 
-`
-[client]
+
+`[client]
 port		= 3306
 socket		= /var/run/mysqld/mysqld.sock
 
@@ -83,14 +83,12 @@ innodb_write_io_threads=16
 innodb_read_io_threads=16
 open_files_limit=8000
 
-!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/conf.d/`
 
-`
-
-sudo /etc/init.d/mysql restart
+`sudo /etc/init.d/mysql restart`
 
 
-sudo mysql -u root -p
+`sudo mysql -u root -p`
 
 `
 GRANT REPLICATION SLAVE ON *.* TO 'repl_user'@'slave server IP' IDENTIFIED BY 'repl_user_password';
@@ -114,7 +112,7 @@ Executed_Gtid_Set:
 
 ## Mysql Slave side Configuration
 
-sudo vim /etc/my.cnf
+`sudo vim /etc/my.cnf`
 
 `
 [client]
@@ -189,14 +187,14 @@ open_files_limit=8000
 
 `
 
-sudo /etc/init.d/mysql restart
+`sudo /etc/init.d/mysql restart`
 
 
 
 
 # Below commands to configure mysql replication
 
-sudo mysql -u root -p
+`sudo mysql -u root -p`
 
 `
 reset slave;
