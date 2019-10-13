@@ -1,0 +1,35 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .          ## context will show you where is current Dockerfile
+      dockerfile: Dockerfile ## mention Dockerfile created by which name leller  
+      args:
+        - PYTHON_VERSION=${PYTHON_VERSION}
+    image: pythonimage:latest 
+    ports:
+       - "5002:5002"  
+    networks:
+      - appnetwork
+
+  redis:
+    image: ${REDIS_IMAGE}
+    volumes:
+      - myredisdata:/data
+    networks:
+      - appnetwork    
+
+  redis2:
+    image: ${REDIS_IMAGE}
+    volumes:
+      - myredisdata:/data
+    networks:
+      - appnetwork2
+
+networks:             ## create neworks after servie steps
+  appnetwork:
+  appnetwork2:  
+
+volumes:  
+  myredisdata:         ## volume create after neworks steps
+  myredisdata2: 

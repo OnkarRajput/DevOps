@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .          ## context will show you where is current Dockerfile
+      dockerfile: Dockerfile ## mention Dockerfile created by which name leller  
+      args:
+        - PYTHON_VERSION=python:3.7-alpine
+    image: pythonimage:latest 
+    ports:
+       - "5003:5003"
+    env_file:
+       - .env.txt   
+
+
+  redis:
+    image: "redis:alpine"
+ 
