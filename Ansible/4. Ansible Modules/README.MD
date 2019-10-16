@@ -234,7 +234,7 @@ run multipal stages
       - uptime.stdout
       - host.stdout
 
-```      
+```       
 
 
 
