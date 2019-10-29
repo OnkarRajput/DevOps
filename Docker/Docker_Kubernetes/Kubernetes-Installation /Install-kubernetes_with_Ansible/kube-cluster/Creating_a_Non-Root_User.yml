@@ -1,0 +1,19 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: create the 'k8s-admin' user
+      user: name=k8s-admin append=yes state=present createhome=yes shell=/bin/bash
+
+    #Configures the sudoers file to allow the 'k8s-admin' user to run sudo commands without a password prompt.
+    - name: allow 'k8s-admin' to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        line: 'k8s-admin ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+    #Adds the public key in your local machine (usually ~/.ssh/id_rsa.pub) to the remote 'k8s-admin' user’s authorized key list. This will allow you to SSH into each server as the 'k8s-admin' user.  
+    - name: set up authorized keys for the 'k8s-admin' user
+      authorized_key: user=k8s-admin key="{{item}}"
+      with_file:
+        - ~/.ssh/id_rsa.pub
+      

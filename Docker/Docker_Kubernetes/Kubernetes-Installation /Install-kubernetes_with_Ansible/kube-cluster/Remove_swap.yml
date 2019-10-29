@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  tasks:
+   - name: name: Remove swapfile from /etc/fstab
+     mount::
+       name: swap
+       fstype: swap
+       state: absent
+
+   - name: Disable swap
+     command: swapoff -a 
