@@ -1,20 +1,7 @@
 
 
 #!/bin/bash
-# chkconfig: 2345 95 20
-# description: This application was developed by me and is tested on this server
-# processname: my_app
-#
-# Tomcat 8 start/stop/status init.d script
-# Initially forked from: https://gist.github.com/valotas/1000094
-# @author: Miglen Evlogiev <bash@miglen.com>
-#
-# Release updates:
-# Updated method for gathering pid of the current proccess
-# Added usage of CATALINA_BASE
-# Added coloring and additional status
-# Added check for existence of the tomcat user
-# Added termination proccess
+
  
 #Location of JAVA_HOME (bin files)
 export JAVA_HOME=/usr/java/latest
