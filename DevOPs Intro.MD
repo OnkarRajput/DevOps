@@ -20,17 +20,21 @@ We have do some monitoring servers based on Nagios, Zabbix, ELK stack, Datadog e
 
 So OS platfrom we are using Linux-Redhat, CentOS, Ubuntu, Windows servers, databases like mysql, mssql, Oracle, MongoDB, Postgres. Webservers like Apache, IIS, Nginx and application server apache-tomcat.
 
-####################################################################################################################################################################################################################################################
 
 
-● AWS Services: EC2, ECR, ECS, EKS, Lambda, S3, EFS, Glacier, RDS, DynamoDB, VPC, CloudFront,
+
+
+# AWS Services: 
+● EC2, ECR, ECS, EKS, Lambda, S3, EFS, Glacier, RDS, DynamoDB, VPC, CloudFront,
 Route53, API Gateway, CodePipeline, Subnets, Route tables, ELB, CloudWatch, CloudFormation, IAM,
 Step Functions, Simple Notification Service (SNS), Simple Queue Service (SQS), SWF.
+
 ● Databases: MySQL, Oracle SQL, MongoDB, MSSQL and DynamoDB
+
 ● Scripting: Bash, Python, PowerShell
 
 
-###### Duties and Responsibilities #######
+# Duties and Responsibilities 
 Work directly with the Dev team and Senior DevOps manager to test system integrity
 
 Design and implement secure automation solutions for development, testing, and production environments
