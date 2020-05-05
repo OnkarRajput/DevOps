@@ -1,6 +1,6 @@
-## response time vs page load time 
+# response time vs page load time and Latency
 
- #### page load time : 
+ ## page load time : 
  Load and display time is the time it takes for your website to be downloaded from the server(s) and displayed on the user's browser. 
 
 Page load time is the time it takes to download and display the entire content of a web page in the browser window (measured in seconds).
@@ -15,7 +15,7 @@ improve page load time: File Compression: Reduces the size of the CSS, HTML, Jav
 * CDN: A content delivery network (CDN) puts content geographically closer to your users so they can receive it quicker.
 
 -------
-### response time 
+## response time 
 
 Response time is the length of time it takes for your website's functions to respond to the user's query.
 Ex. the length of time for the modals to open, for your form to submit etc.
