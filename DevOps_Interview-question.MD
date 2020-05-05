@@ -176,4 +176,74 @@ node {
 
 ```
 ----------
+## What are the benefits of implementing an ITIL service desk?
+
+Increased first call resolution
+
+Improved tracking of service quality
+
+Improved recognition of trends and incidents
+
+Improved employee satisfaction
+
+Skill-based support
+
+Rapid restoration of service
+
+Improved incident response time
+
+Quick service restoration
+
+
+## What are the objectives of Incident Management?
+Assure that regulated methods and procedures are used for the prompt and efficient response, reporting of incidents, 
+
+documentation, analysis, and ongoing management 
+
+Progress visibility and communication of incidents to IT support staff and business
+
+Improve the business perception of IT by resolving and reporting incidents when they occur 
+
+Align Incident Management activities and priorities accordingly
+
+Manage user satisfaction with the quality of IT services 
+
+## How an Incident Management System Works?
+Records incidents
+
+Lists them depending on their impact and urgency
+
+Authorizes the incident to the relevant responding personnel
+
+Resolution and recovery
+
+## What are the stages of incident management in ITIL?
+
+The following are the steps of incident management process:
+
+Step1: Incident identification
+
+Step2: Incident logging
+
+Step3: Incident categorization
+
+Step4: Incident prioritization
+
+Step5: Incident response
+
+Step6: Initial diagnosis
+
+Step7: Incident escalation
+
+Step8: Resolution and recovery
+
+## Q50. What is the RACI model?
+
+Responsible – Person responsible to complete the assigned job.
+
+Accountable – Person accountable for the assigned task.
+
+Consulted – Defines who are consulted, persons or group.
+
+Informed – People who are informed on the progress and ongoing task.
 
