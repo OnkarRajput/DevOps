@@ -76,7 +76,67 @@ kill -3 <pid>
 
 pid: is the Process Id of the application, whose thread dump should be captured.
 ‘kill -3’ option is used thread dump is sent to the standard error stream. If you are running your application in tomcat, thread dump will be sent into <TOMCAT_HOME>/logs/catalina.out file.
-  
+
+
+##### threaddump_linux.sh
+ 
+ ```
+ vim threaddump_linux.sh
+ ```
+ 
+ ```
+ #!/bin/sh
+#
+# Takes the JBoss PID as an argument. 
+#
+# Create thread dumps a specified number of times and INTERVAL. Thread dumps 
+# will be in the file where stdout was redirected or in console output.
+#
+# Usage: sh ./threaddump_linux.sh <JBOSS_PID>
+#
+
+# Number of times to collect data.
+LOOP=6
+# Interval in seconds between data points.
+INTERVAL=20
+
+for ((i=1; i <= $LOOP; i++))
+do
+   kill -3  $1
+   echo "thread dump #" $i
+   if [ $i -lt $LOOP ]; then
+      echo "Sleeping..."
+      sleep $INTERVAL
+   fi
+done
+ 
+ ```
+ 
+ ```
+ threaddump_linux-continuous.sh
+ ```
+ ```
+ #!/bin/sh
+#
+# Takes the JBoss PID as an argument. 
+#
+# Generates a thread dump every specified interval. Thread dumps will be in the
+# file where stdout is redirected or in console output.
+#
+# Usage: sh ./threaddump_linux-continuous.sh <JBOSS_PID> 
+#
+
+# Interval in seconds between data points.
+INTERVAL=30
+
+while [ true ]
+do
+    kill -3 $1
+    sleep $INTERVAL
+done
+
+```
+
 ------
 ### JCMD 
 
