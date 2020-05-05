@@ -20,6 +20,8 @@ We have do some monitoring servers based on Nagios, Zabbix, ELK stack, Datadog e
 
 So OS platfrom we are using Linux-Redhat, CentOS, Ubuntu, Windows servers, databases like mysql, mssql, Oracle, MongoDB, Postgres. Webservers like Apache, IIS, Nginx and application server apache-tomcat.
 
+We migrate 120 application on automaction pipeline
+
 
 
 
