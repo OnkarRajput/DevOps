@@ -32,22 +32,41 @@ Step Functions, Simple Notification Service (SNS), Simple Queue Service (SQS), S
 
 ###### Duties and Responsibilities #######
 Work directly with the Dev team and Senior DevOps manager to test system integrity
+
 Design and implement secure automation solutions for development, testing, and production environments
+
 Implement integrations requested by customers
+
 Deploy updates and fixes
+
 Perform root cause analysis for production errors
+
 Investigate and resolve technical issues
+
 Develop scripts to automate visualization
+
 Design procedures for system troubleshooting and maintenance
+
 Participates in the on-call rotation
+
 Infrastructure design. Monitoring, Virtualization
+
 CI/CIT/CD — continuous integration, continuous integration testing, and continuous deployment.
+
 Infrastructure strategy & operations 
+
 Software release cycles and management.
+
 Designing a branch/release strategy for the provided SCM (git, svn)
+
 Optimization / tuning. Of applications,
+
 Build and test automation tools for infrastructure provisioning
+
 Provide technical guidance and educate team members and coworkers on development and operations
+
 Brainstorm for new ideas and ways to improve development delivery
+
 Maintain day-to-day management and administration of projects
+
 Document and design various processes; update existing processes
