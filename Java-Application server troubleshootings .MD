@@ -75,6 +75,21 @@ done
  
  ```
  
+ #### Dump Java Threads - Windows
+ 1. In task manager, get the PID for Java/tomcat.
+ 
+ 2. Open a command window
+ 
+ 3. [drive]:\Program Files\Beginfinite\Retain\Java8\jdk1.8.0_66\bin
+ 
+    jstack [PID] > [filename]
+ ```
+ D:\Program Files\Beginfinite\Retain\Java8\jdk1.8.0_66\bin 
+ 
+ jstack -F 4096 > dump.txt
+ ```
+ Now you can stop tomcat or reboot the server.
+
  
  
  
@@ -170,8 +185,56 @@ The jcmd tool was introduced with Oracle’s Java 7. It’s useful in troublesho
 
 ```
 jcmd <pid> Thread.print > <file-path>
+
+jcmd 37320 GC.heap_dump /opt/tmp/heapdump.bin
 ```
+
+
 “jcmd Thread.print” will do largely the same thing as jstack
+
+-----
+### jmap
+jmap print heap dumps into specified file location. This tool is packaged within JDK. It can be found in \bin folder.
+
+Here is how you should invoke jmap:
+```
+jmap -dump:format=b,file=<dump_file_name> <pid>
+
+jmap -dump:format=b,file=/opt/tmp/heapdump.bin 37320
+
+jmap -F -dump:format=b,file=[c:\temp\heapdump.bin] 1234
+
+```
+
+'-F' parameter will encounter an error when executing the command. 
+
+
+cd /opt/www/java/jdk/bin/
+
+ ```
+ jmap -heap <JAVA_PID>
+ 
+ ```
+ 
+ ##### Java Heap Dump - Windows
+
+Run jmap to get a Java heap dump:  
+
+1.  Get the PID for tomcat (see step #1 "Dump Java Threads").
+
+2.  Change to the JDK/bin directory in a command window:
+
+```
+[drive]:\Program Files\Beginfinite/Retain/Java8/jdk1.8.0_66/bin  
+```
+
+(the java directory name may change with future revisions of Retain, so always verify the directory name first)
+
+3.  Excecute jmap as follows:   
+```
+jmap -dump:format=b,file=[/path]/heap.bin [PID]
+
+```
 
 ### Windows (Ctrl + Break)
 This option will work only in Windows Operating system.
