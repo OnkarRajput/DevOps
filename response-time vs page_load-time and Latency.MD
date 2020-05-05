@@ -34,14 +34,18 @@ Time to load HTML of the site
 
 ---------
 
-i. Latency : Your system stop reponding or your application very slow. everybody must have encounter
+# i. Latency 
 
-. So Latency means time take by client to server and again back from server to client. SO this delay or this communication which is happening over network. how much time is being spent over there.
+Your system stop reponding or your application very slow. everybody must have encounter.
+
+So Latency means time take by client to server and again back from server to client. SO this delay or this communication which is happening over network. how much time is being spent over there.
 The time taken for the request to reach the server and again back time taken by the responce to  reach the  browser. that time sepent over the network you can say  Latency.
 
 
 ------------------
-ii. Response Time :  Supose that you are send request from  your web browser to the server and after how much time did you get the response. Means a request send from browser and browser recieved the response that the time spend that time gap occured that is the response time. 
+# ii. Response Time 
+
+Supose that you are send request from  your web browser to the server and after how much time did you get the response. Means a request send from browser and browser recieved the response that the time spend that time gap occured that is the response time. 
 
 Supose i am using google drive and and type somthing and all the changes take time to save, So how long does it take. That is the response time. So it's full you can say from request till we recieved  the response that is your response time. so its include the time taken by the request to reach the server. than time taken by the server to process the request and then time taken by the response from server to client.
 
@@ -54,11 +58,15 @@ Latency : time spent over the communication chanel
 Processing time : the time taken by server to produce the desire result 
 
 ---------------
-iii. Processing Time : Processing time is the time taken by the server to process that request. Means it took the input, when it recieve the input and it produce the final response. 
+# iii. Processing Time 
+
+Processing time is the time taken by the server to process that request. Means it took the input, when it recieve the input and it produce the final response. 
 
 So proccess time is the time taken by the server to proccess the request. Proccess means it will take the input, preform the computation what ever logic is being applyed. excute that logic and the produce the final responce. so this is all happening on server level
 
 ---------------
-iv. Throughput : you have API, endpoint. how many request can be surved per unit of the time. how requests can be served in the sepcific time duration means per unit of time. that is what how you messured the Throughput. If you Latency is high than you Throughput will be less, if your Response time is higher Throughput will discrease. if Processing time is higher than Throughput will increase.
+# iv. Throughput 
+
+you have API, endpoint. how many request can be surved per unit of the time. how requests can be served in the sepcific time duration means per unit of time. that is what how you messured the Throughput. If you Latency is high than you Throughput will be less, if your Response time is higher Throughput will discrease. if Processing time is higher than Throughput will increase.
 
  
