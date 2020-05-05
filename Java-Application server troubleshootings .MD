@@ -29,7 +29,7 @@ jstack -l JAVA_PID > jstack.out
 kill -3 JAVA_PID
 ```
  
-###### jstack linux script (continuous)
+##### jstack linux script (continuous)
 Create linux_jstack-continuous.sh script. Make the script executeable with chmod 755
 It will use jstack to capture a series of 6 thread dumps spaced 20 seconds apart (modify as needed), passing in the Java process ID as an argument. Make sure you set JAVA_HOME in this script. It generates a file called jstack_threaddump.out in the directory where this script is executed. For example:
 
