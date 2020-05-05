@@ -98,3 +98,60 @@ profiler : shows thread pool like running jdbc connection, and some other blocki
 ------
 ### JMC 
 Java Mission Control (JMC) is a tool that collects and analyze data from Java applications running locally or deployed in production environments.
+
+
+-------------
+## How do I fix Java heap space error?
+1. Calculate memory needed.
+2. Check that the JVMs have enough memory for the TaskTracker tasks.
+3. Check that the JVMs settings are suitable for your tasks.
+4. Limit your nodes use of swap space and paged memory.
+5. Set the task attempt slots to a number that’s lower than the number calculated by the JobTracker web GUI
+https://mapr.com/blog/how-to-avoid-java-heap-space-errors-understanding-and-managing-task-attempt-memory/
+
+## What is the Java heap?
+The heap is the runtime data area from which memory for all class instances and arrays is allocated. The heap is created on virtual machine start-up. Heap storage for objects is reclaimed by an automatic storage management system (known as a garbage collector); objects are never explicitly deallocated.
+
+## How do I increase heap size?
+You can increase or change size of Java Heap space by using JVM command line option -Xms, -Xmx and -Xmn. don't forget to add word "M" or "G" after specifying size to indicate Mega or Gig. for example you can set java heap size to 258MB by executing following command java -Xmx256m HelloWord.
+
+## What is a heap error?
+Heap errors. Heap errors can occur when your code inadvertently overwrites control information that the memory management functions use to control heap usage. The application that you are debugging must have been built with the heap check capability.
+
+
+## Difference between Java Heap Space and Stack Memory:
+Heap memory is used by all the parts of the application whereas stack memory is used only by one thread of execution. Whenever an object is created, it's always stored in the Heap space and stack memory contains the reference to it.
+
+
+##### What is thread dump and heap dump in Weblogic?
+A thread dump is a dump of the stacks of all live threads. Thus useful for analyzing what an app is up to at some point in time, and if done at intervals handy in diagnosing some kinds of 'execution' problems (e.g. thread deadlock). A heap dump is a dump of the state of the Java heap memory.
+
+##### When should I take thread dump?
+A good practice is to take 10 thread dumps at a regular interval (for example, one thread dump every ten seconds).
+Step 1: Get the PID of your Java process. The first piece of information you will need to be able to obtain a thread dump is your Java process's PID. ...
+Step 2: Request a thread dump from the JVM. jstack.
+
+### How do I get a memory dump?
+Enable memory dump setting
+In Control Panel, select System and Security > System.
+Select Advanced system settings, and then select the Advanced tab.
+In the Startup and Recovery area, select Settings.
+Make sure that Kernel memory dump or Complete memory dump is selected under Writing Debugging Information.
+
+### How do I check my heap dump?
+Open the heap dump in Eclipse Memory Analyzer using the option File --> Open Heap Dump. First, it will prompt you to create a leak suspect report. The user can create it or skip it. The "overview" tab of the memory analyzer will show the total size of the heap and a pie chart of object size.Au
+
+### How do I collect a heap dump?
+Heap dump = memory contents for the JVM process output to a binary file. To take a thread dump on Windows, CTRL + BREAK if your JVM is the foreground process is the simplest way. If you have a unix-like shell on Windows like Cygwin or MobaXterm, you can use kill -3 {pid} like you can in Unix.
+
+## Why do we take thread dump?
+Thread dumps are vital artifacts to diagnose CPU spikes, deadlocks, memory problems, unresponsive applications, poor response times, and other system problems. Thread dumps are vital artifacts to diagnose CPU spikes, deadlocks, memory problems, unresponsive applications, poor response times, and other system problems
+
+## What thread dump contains?
+A thread dump is a snapshot of the state of all threads that are part of the process. The state of each thread is presented with a so called stack trace, which shows the contents of a thread's stack. Some of the threads belong to the Java application you are running, while others are JVM internal threads.
+
+# How do you take a thread dump?
+Ctrl + Break (Windows) In Windows operating systems, we can capture a thread dump using the CTRL and Break key combination. To take a thread dump, navigate to the console used to launch the Java application and press CTRL and Break keys together.
+
+# How do you take a thread dump in Unix?
+On UNIX, Mac OS X, and Linux, you can send a QUIT signal to the Java process to tell it to output a thread dump to standard output. You may need to run this command as sudo -u user kill -QUIT <pid> where "user" is the user that the Java process is running as
