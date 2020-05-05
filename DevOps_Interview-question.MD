@@ -114,3 +114,66 @@ Git is a distributed version control system, whereas SVN is a centralized versio
 *Git was developed for Linux kernel by Linus Torvalds; SVN was developed by CollabNet, Inc.
 
 *Git is distributed under GNU, and its maintenance overseen by Junio Hamano; Apache Subversion, or SVN, is distributed under the open source license.
+
+---
+## Jenkins Pipeline?
+
+#### Declarative Pipeline
+
+```
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
+
+```
+
+```
+enkinsfile (Declarative Pipeline)
+pipeline {
+    agent { docker { image 'maven:3.3.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
+
+```
+
+#### Jenkinsfile (Scripted Pipeline)
+
+```
+node {  
+    stage('Build') { 
+        // 
+    }
+    stage('Test') { 
+        // 
+    }
+    stage('Deploy') { 
+        // 
+    }
+}
+
+```
+----------
+
