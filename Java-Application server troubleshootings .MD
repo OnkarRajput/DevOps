@@ -123,25 +123,28 @@ Heap errors. Heap errors can occur when your code inadvertently overwrites contr
 Heap memory is used by all the parts of the application whereas stack memory is used only by one thread of execution. Whenever an object is created, it's always stored in the Heap space and stack memory contains the reference to it.
 
 
-##### What is thread dump and heap dump in Weblogic?
+## What is thread dump and heap dump in Weblogic?
 A thread dump is a dump of the stacks of all live threads. Thus useful for analyzing what an app is up to at some point in time, and if done at intervals handy in diagnosing some kinds of 'execution' problems (e.g. thread deadlock). A heap dump is a dump of the state of the Java heap memory.
 
-##### When should I take thread dump?
+## When should I take thread dump?
 A good practice is to take 10 thread dumps at a regular interval (for example, one thread dump every ten seconds).
 Step 1: Get the PID of your Java process. The first piece of information you will need to be able to obtain a thread dump is your Java process's PID. ...
 Step 2: Request a thread dump from the JVM. jstack.
 
-### How do I get a memory dump?
-Enable memory dump setting
-In Control Panel, select System and Security > System.
-Select Advanced system settings, and then select the Advanced tab.
-In the Startup and Recovery area, select Settings.
-Make sure that Kernel memory dump or Complete memory dump is selected under Writing Debugging Information.
+## How do I get a memory dump?
+* Enable memory dump setting
 
-### How do I check my heap dump?
+* In Control Panel, select System and Security > System.
+Select Advanced system settings, and then select the Advanced tab.
+
+*In the Startup and Recovery area, select Settings.
+
+* Make sure that Kernel memory dump or Complete memory dump is selected under Writing Debugging Information.
+
+## How do I check my heap dump?
 Open the heap dump in Eclipse Memory Analyzer using the option File --> Open Heap Dump. First, it will prompt you to create a leak suspect report. The user can create it or skip it. The "overview" tab of the memory analyzer will show the total size of the heap and a pie chart of object size.Au
 
-### How do I collect a heap dump?
+## How do I collect a heap dump?
 Heap dump = memory contents for the JVM process output to a binary file. To take a thread dump on Windows, CTRL + BREAK if your JVM is the foreground process is the simplest way. If you have a unix-like shell on Windows like Cygwin or MobaXterm, you can use kill -3 {pid} like you can in Unix.
 
 ## Why do we take thread dump?
