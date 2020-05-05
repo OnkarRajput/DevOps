@@ -66,12 +66,19 @@ Agile is a software development methodology that focuses on iterative, increment
 ## What are the different phases in DevOps?
 
 Plan - Initially, there should be a plan for the type of application that needs to be developed. Getting a rough picture of the development process is always a good idea.
+
 Code - The application is coded as per the end-user requirements. 
+
 Build - Build the application by integrating various codes formed in the previous steps.
+
 Test - This is the most crucial step of the application development. Test the application and rebuild, if necessary.
+
 Integrate - Multiple codes from different programmers are integrated into one.
+
 Deploy - Code is deployed into a cloud environment for further usage. It is ensured that any new changes do not affect the functioning of a high traffic website.
+
 Operate - Operations are performed on the code if required.
+
 Monitor - Application performance is monitored. Changes are made to meet the end-user requirements.
 
 -------------------------------------
