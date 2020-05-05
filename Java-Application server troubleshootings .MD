@@ -19,16 +19,29 @@ jstack is an effective command line tool to capture thread dumps. jstack tool is
 ```
 jstack -l  <pid> > <file-path>
 
+jstack -l JAVA_PID > jstack.out
+
  ``` 
  
- ### threaddump_linux_jstack-continuous.sh
+ Note the process ID number of the Java process (e.g. using top, a grep on ps -axw, etc.) and send a QUIT signal to the process with the kill -QUIT or kill -3 command. For example:
+
+```
+kill -3 JAVA_PID
+```
+ 
+## jstack linux script (continuous)
+Create linux_jstack-continuous.sh script. Make the script executeable with chmod 755
+It will use jstack to capture a series of 6 thread dumps spaced 20 seconds apart (modify as needed), passing in the Java process ID as an argument. Make sure you set JAVA_HOME in this script. It generates a file called jstack_threaddump.out in the directory where this script is executed. For example:
+
+```
+./threaddump_linux_jstack-continuous.sh JAVA_PID
+``` 
+ 
  
  ```
  vim threaddump_linux_jstack-continuous.sh
- ```
- 
- ```
- #!/bin/sh
+
+#!/bin/sh
 #
 # Takes the JBoss PID as an argument. 
 #
@@ -77,15 +90,13 @@ kill -3 <pid>
 pid: is the Process Id of the application, whose thread dump should be captured.
 ‘kill -3’ option is used thread dump is sent to the standard error stream. If you are running your application in tomcat, thread dump will be sent into <TOMCAT_HOME>/logs/catalina.out file.
 
+#### Linux: sh ./threaddump_linux.sh JAVA_PID
 
-##### threaddump_linux.sh
  
  ```
  vim threaddump_linux.sh
- ```
- 
- ```
- #!/bin/sh
+
+#!/bin/sh
 #
 # Takes the JBoss PID as an argument. 
 #
@@ -136,6 +147,20 @@ do
 done
 
 ```
+
+#### JBoss EAP Parameter
+Use the below command to start JBoss instance and then use kill -3 to generate the thread dumps.
+
+If the Java application is started with a service script that logs console output, the thread dumps will be in the console log. Otherwise, redirect stdout to a file on startup.
+
+```
+nohup $JBOSS_HOME/bin/run.sh -c  yourinstancename $JBOSS_OPTS >> console-$(date +%Y%m%d).out  2>&1 < /dev/null &
+
+kill -3 JAVA_PID
+
+```
+
+This will redirect your output/dump to the file console specified in the above command.
 
 ------
 ### JCMD 
