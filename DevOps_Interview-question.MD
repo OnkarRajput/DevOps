@@ -94,3 +94,23 @@ Create a proof of concept (PoC). Once it is accepted and approved, the team can 
 Stage 3
 The project is now ready for implementing DevOps by using version control/integration/testing/deployment/delivery and monitoring followed step by step.
 By following the proper steps for version control, integration, testing, deployment, delivery, and monitoring, the project is now ready for DevOps implementation. 
+
+## The difference between Git and SVN version control systems ?
+Git is a distributed version control system, whereas SVN is a centralized version control system. Git uses multiple repositories including a centralized repository and server, as well as some local repositories.
+
+
+*Git is a distributed VCS; SVN is a non-distributed VCS.
+
+*Git has a centralized server and repository; SVN does not have a centralized server or repository.
+
+*The content in Git is stored as metadata; SVN stores files of content.
+
+*Git branches are easier to work with than SVN branches.
+
+*Git does not have the global revision number feature like SVN has.
+
+*Git has better content protection than SVN.
+
+*Git was developed for Linux kernel by Linus Torvalds; SVN was developed by CollabNet, Inc.
+
+*Git is distributed under GNU, and its maintenance overseen by Junio Hamano; Apache Subversion, or SVN, is distributed under the open source license.
